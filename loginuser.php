@@ -47,7 +47,7 @@ $dbname = "id8999302_ecgcloud"; /* Database name */
     </form>
     <form class="login-form">
       <label style="font-size:14px">Username</label> <input type="text" name="username" id="Admin" placeholder="Enter Username">
-	 <label style="font-size:14px">Password</label> <input type="password" name="password" id="user_password" placeholder="Enter Password">
+	  <label style="font-size:14px">Password</label> <input type="password" name="password" id="user_password" placeholder="Enter Password">
       <input type="submit">
     </form>
   </div>
