@@ -37,12 +37,18 @@
 				shell_exec('cd /home/pi/PFE');
             echo "This is Button1 that is selected"; 
         } 	
+		
+		
+		function pyton($t){
+			shell_exec('cd /home/pi/PFE');
+			$output = shell_exec('python3 test.py '.$t);
+		}
     ?> 
 <form method="post"> 
 <div class="box">
 <ol class="odd center">
   <li class="hex">
-    <div class="hex-content"><center>Lancer le script d’acquisition<br>Temps :<input type="number" min="10" max="30" step="1" value="10" class="time" /><input type="submit" name="button1" value="Button1"  ></center></div>
+    <div class="hex-content"><center>Lancer le script d’acquisition<br>Temps :<input type="number" min="10" max="30" step="1" value="10" class="time" /><input type="submit" name="button1" value="Button1" onclick="" ></center></div>
   </li>
   <li class="hex">
     <div class="hex-content">Afficher la courbe ECG <br><center><i class="material-icons" style="font-size:30px">vpn_key</i></center><input type="submit" name="button2" value="Button2"  ></div>
