@@ -18,7 +18,7 @@
 
 
 <?php
-      
+      include('connexion.php');
         if(isset($_POST['button1'])) { 
 			shell_exec('cd /home/pi/PFE');
 			$t=$_POST["time"];
