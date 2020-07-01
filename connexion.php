@@ -3,5 +3,5 @@
    define('DB_USERNAME', 'houssem');
    define('DB_PASSWORD', 'houssem');
    define('DB_DATABASE', 'ECG');
-   $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+   $db = new mysqli(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 ?>
