@@ -28,7 +28,8 @@
 		     
         if(isset($_POST['button3'])) { 
 			shell_exec('cd /home/pi/PFE');
-            echo "This is Button1 that is selected"; 
+            $output = shell_exec('octave -q calcul.m');
+		   echo "<pre>$output</pre>";;
         } 
         if(isset($_POST['button4'])) { 
 			shell_exec('cd /home/pi/PFE');

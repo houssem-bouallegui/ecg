@@ -2,10 +2,10 @@
 
 echo '<html>';
 
-$host = "localhost"; /* Host name */
-$user = "id8999302_ecgcloud"; /* User */
-$password = "ecgcloud"; /* Password */
-$dbname = "id8999302_ecgcloud"; /* Database name */
+$host = "127.0.0.1:9000"; /* Host name */
+$user = "houssem"; /* User */
+$password = "houssem"; /* Password */
+$dbname = "ECG"; /* Database name */
    if($_SERVER["REQUEST_METHOD"] == "POST") {
 	   
 	  $con = mysqli_connect($host, $user, $password,$dbname);
@@ -13,7 +13,7 @@ $dbname = "id8999302_ecgcloud"; /* Database name */
 	  $myusername = mysqli_real_escape_string($con,$_POST['username']);
       $mypassword = mysqli_real_escape_string($con,md5($_POST['password'])); 
       
-      $sql = "SELECT * FROM users WHERE username = '$myusername' and password = '$mypassword'";
+      $sql = "SELECT * FROM login WHERE User = '$myusername' and Pass = '$mypassword'";
       $result = mysqli_query($con,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];
