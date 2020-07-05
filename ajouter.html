@@ -30,18 +30,18 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Register</h2>
-                    <form method="POST" action="ajouter.php">
+                    <form method="POST" action="register.php">
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Prenom</label>
-                                    <input class="input--style-4" type="text" name="first_name" maxlength="60" required>
+                                    <input class="input--style-4" type="text" name="prenom" maxlength="60" required>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Nom</label>
-                                    <input class="input--style-4" type="text" name="last_name" maxlength="60" required>
+                                    <input class="input--style-4" type="text" name="nom" maxlength="60" required>
                                 </div>
                             </div>
                         </div>
@@ -60,11 +60,11 @@
                                     <label class="label">Sex</label>
                                     <div class="p-t-10">
                                         <label class="radio-container m-r-45">Homme
-                                            <input type="radio" checked="checked" name="gender">
+                                            <input type="radio" checked="checked" name="gender" value="homme">
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="radio-container">Femme
-                                            <input type="radio" name="gender">
+                                            <input type="radio" name="gender" value="femme">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
@@ -93,7 +93,7 @@
                             </div>
                         </div>
                         <div class="p-t-15">
-                            <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                            <button class="btn btn--radius-2 btn--blue" type="submit" name="button" >Submit</button>
                         </div>
                     </form>
                 </div>

@@ -124,6 +124,14 @@ ol.odd {
      left: 30%;
 	 border: 10px solid transparent;
  }
+ 
+ .box2 {
+	 position: absolute;
+	 background-color: white;
+     left: 30%;
+	 top:60%;
+	 border: 10px solid;
+ }
 input[type=submit] {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
