@@ -8,7 +8,7 @@
 
 
     <!-- Title Page-->
-    <title>Ajout d'une personne</title>
+    <title>Modification d'une personne</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -25,23 +25,44 @@
 </head>
 
 <body>
+<?php
+	include('connexion.php');
+	
+			
+			$id=$_POST["person"];
+			$sql = "SELECT * FROM person WHERE ID='$id'";
+			$result = $db->query($sql);
+
+			$result = $db->query($sql);
+			if ($result->num_rows > 0) {
+			while($row = $result->fetch_assoc()) {
+				$nom=$row['Nom'];
+				$prenom=$row["Prenom"];
+				$date=$row["DateN"];
+				$sexe=$row["sexe"];
+				$email=$row["email"];
+				$num=$row["num"];
+				$adr=$row["adr"];
+				$dataset=$row["dataset"];
+			}}
+	?>
     <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Register</h2>
-                    <form method="POST" action="register.php">
+                    <form method="POST" action="mod2.php">
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Prenom</label>
-                                    <input class="input--style-4" type="text" name="prenom" maxlength="60" required>
+                                    <input class="input--style-4" type="text" name="prenom" maxlength="60" value="<?php echo $prenom;?>" required>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Nom</label>
-                                    <input class="input--style-4" type="text" name="nom" maxlength="60" required>
+                                    <input class="input--style-4" type="text" name="nom" maxlength="60" value="<?php echo $nom;?>" required>
                                 </div>
                             </div>
                         </div>
@@ -50,7 +71,7 @@
                                 <div class="input-group">
                                     <label class="label">Date de naissance</label>
                                     <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="text" name="birthday" required>
+                                        <input class="input--style-4 js-datepicker" type="text" name="birthday"  value="<?php echo $date;?>"required>
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
@@ -60,11 +81,21 @@
                                     <label class="label">Sex</label>
                                     <div class="p-t-10">
                                         <label class="radio-container m-r-45">Homme
-                                            <input type="radio" checked="checked" name="gender" value="homme">
+                                            <?php 
+												if ($sexe == "homme"){
+												echo"<input type='radio' checked='checked' name='gender' value='homme'>";} else {
+												echo"<input type='radio' name='gender' value='homme'>";
+												}
+											?>
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="radio-container">Femme
-                                            <input type="radio" name="gender" value="femme">
+                                            <?php 
+												if ($sexe == "femme"){
+												echo"<input type='radio' checked='checked' name='gender' value='femme'>";} else {
+												echo"<input type='radio' name='gender' value='femme'>";
+												}
+											?>
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
@@ -75,27 +106,41 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="email" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" required>
+                                    <input class="input--style-4" type="email" name="email" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"  value="<?php echo $email;?>" required>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Numero téléphone</label>
-                                    <input class="input--style-4" type="tel" name="phone" pattern="[0-9]{8}" required>
+                                    <input class="input--style-4" type="tel" name="phone" pattern="[0-9]{8}" value="<?php echo $num;?>" required>
                                 </div>
                             </div>
                         </div>
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
                                <label class="label">Address</label>
-                                    <input class="input--style-4" type="text" name="address" maxlength="100" required>
+                                    <input class="input--style-4" type="text" name="address" maxlength="100" value="<?php echo $adr;?>" required>
                                 <div class="select-dropdown"></div>
                             </div>
                         </div>
-                        <div class="p-t-15">
+						<div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">ID</label>
+                                    <input class="input--style-4" type="text" name="id" value="<?php echo $id;?>" readonly required>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Dataset</label>
+                                    <input class="input--style-4" type="text" name="dataset" value="<?php echo $dataset;?>">
+                                </div>
+                            </div>
+                        </div>
+						<div class="p-t-15">
                             <button class="btn btn--radius-2 btn--blue" type="submit" name="button" >Submit</button>
                         </div>
-                    </form>
+					</form>
                 </div>
             </div>
         </div>

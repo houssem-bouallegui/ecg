@@ -2,59 +2,19 @@
 background-color:powderblue;
 font-size:50px;
 height:70px;
-margin-bottom:10;
+margin-bottom:20;
 
 }
 
+.btn{
+
+width:100;
+height:50;
+margin-right:50;
+
+}
 .main{
 text-align:center;
-
-}
-.left{
-width:29%;
-float:left;
-border-left:2px solid;
-border-right:2px solid;
-border-top:2px solid;
-height:100%;
-padding-top:20;
-
-}
-.right{
-
-width:70%;
-float:left;
-height:100%;
-border-right:2px solid;
-border-top:2px solid;
-
-
-}
-.btn {
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #6f60dd;
-  width: 100%;
-  border: 0;
-  margin: 4px 2px;
-  border-radius: 30%;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;
-}
-.btn:hover, .btn:active, .btn:focus {
-  background: #3f3284;
-}
-.row:after{
-
-content: "";
-  display: table;
-  clear: both;
-
 
 }
 
@@ -68,6 +28,14 @@ ol.odd {
   margin-bottom: -4.5%;
 }
 
+table, th, td {
+  border: 1px solid white;
+  color: white;
+}
+
+h2 {
+	color: white;
+}
 .hex {
   position: relative;
   margin: 1em auto;
@@ -118,18 +86,18 @@ ol.odd {
    color: white;
  }
  
-.box {
+ .box {
 	 position: absolute;
-	 
-     left: 30%;
+	 top: 30%;
+     left: 35%;
 	 border: 10px solid transparent;
  }
-input[type=submit] {
+ 
+ input[type=submit] {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
   background: #6f60dd;
-  width: 100%;
   border: 0;
   margin: 4px 2px;
   border-radius: 30%;
@@ -142,15 +110,4 @@ input[type=submit] {
 }
 input[type=submit]:hover,input[type=submit]:active,input[type=submit]:focus {
   background: #3f3284;
-}
-
-.time {
-  width: 35px;
-  height: 20px;
-  line-height: 1.65;
-  padding: 0;
-  margin: 0;
-  border: 1px solid #eee;
-	
-	
 }
